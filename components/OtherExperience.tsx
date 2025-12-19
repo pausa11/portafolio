@@ -2,113 +2,166 @@
 
 import { Section } from '@/components/ui/Section';
 import { motion } from 'framer-motion';
-import { Bike, Trophy, Timer } from 'lucide-react';
-import Image from 'next/image';
+import { Bike, Trophy, Timer, Target } from 'lucide-react';
 import BlurText from './BlurText';
+import DecayCard from './DecayCard';
+import CardSwap, { Card } from './CardSwap';
 
 export function OtherExperience() {
     return (
-        <Section id="other-experience" className="bg-secondary/10">
-            <div className="container mx-auto px-4">
-                <div className="max-w-6xl mx-auto">
+        <Section id="other-experience" className="bg-background">
+            <div id="other-experience-main-container" className="container mx-auto px-4 py-20">
+                <div id="other-experience-container" className="max-w-7xl mx-auto">
+
                     <motion.div
+                        id="other-experience-title"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-background to-secondary border border-border/40 p-8 md:p-16"
+                        className="text-center mb-16"
                     >
-                        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-20" />
-
-                        <div className="relative z-10">
-                            {/* Header Section */}
-                            <div className="text-center mb-12">
-                                <div className="p-4 bg-primary/5 rounded-full mb-8 inline-block">
-                                    <Bike className="w-10 h-10 text-primary" />
-                                </div>
-                                <BlurText
-                                    text="Competitive Cycling Experience"
-                                    className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-white"
-                                    delay={150}
-                                    animateBy="words"
-                                    direction="top"
-                                />
-                                <BlurText
-                                    text="Professional Cyclist in Colombia"
-                                    className="text-xl text-primary font-medium mb-8 text-white"
-                                    delay={150}
-                                    animateBy="words"
-                                    direction="top"
-                                />
-                            </div>
-
-                            {/* Photo and Skills Grid */}
-                            <div className="grid md:grid-cols-2 gap-8 mb-10">
-                                {/* Cycling Photo */}
-                                <motion.div
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: 0.2 }}
-                                    className="relative h-[400px] rounded-2xl overflow-hidden border border-border/30 shadow-lg"
-                                >
-                                    <Image
-                                        src="/cycling.jpg"
-                                        alt="Daniel Toro Soto cycling"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </motion.div>
-
-                                {/* Skills Cards */}
-                                <div className="grid gap-6">
-                                    <motion.div
-                                        initial={{ opacity: 0, x: 20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.3 }}
-                                        className="p-6 rounded-2xl bg-background/50 backdrop-blur-sm border border-border/30"
-                                    >
-                                        <Trophy className="w-6 h-6 text-yellow-500 mb-4" />
-                                        <h4 className="font-bold mb-2">Goal-Oriented</h4>
-                                        <p className="text-sm text-muted-foreground">Strengthened ability to manage long-term objectives and achieve high-performance targets.</p>
-                                    </motion.div>
-                                    <motion.div
-                                        initial={{ opacity: 0, x: 20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.4 }}
-                                        className="p-6 rounded-2xl bg-background/50 backdrop-blur-sm border border-border/30"
-                                    >
-                                        <Timer className="w-6 h-6 text-blue-500 mb-4" />
-                                        <h4 className="font-bold mb-2">Consistency</h4>
-                                        <p className="text-sm text-muted-foreground">Developed strong discipline and habits through rigorous daily training schedules.</p>
-                                    </motion.div>
-                                    <motion.div
-                                        initial={{ opacity: 0, x: 20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.5 }}
-                                        className="p-6 rounded-2xl bg-background/50 backdrop-blur-sm border border-border/30"
-                                    >
-                                        <Bike className="w-6 h-6 text-green-500 mb-4" />
-                                        <h4 className="font-bold mb-2">Focus</h4>
-                                        <p className="text-sm text-muted-foreground">Ability to maintain focus under pressure and stay committed to continuous improvement.</p>
-                                    </motion.div>
-                                </div>
-                            </div>
-
-                            {/* Quote */}
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.6 }}
-                                className="text-lg text-muted-foreground max-w-3xl leading-relaxed text-center mx-auto"
-                            >
-                                "This experience directly translates into my work as a software engineer, where discipline, resilience, and the drive to constantly improve are essential for building high-quality systems."
-                            </motion.p>
+                        <div className="p-4 bg-primary/10 rounded-full mb-6 inline-block">
+                            <Bike className="w-12 h-12 text-primary" />
                         </div>
+                        <BlurText
+                            text="Beyond Software Engineering"
+                            className="text-4xl md:text-6xl font-bold mb-4 tracking-tight"
+                            delay={150}
+                            animateBy="words"
+                            direction="top"
+                        />
+                        <BlurText
+                            text="Professional Cyclist in Colombia"
+                            className="text-xl md:text-2xl text-muted-foreground font-medium"
+                            delay={200}
+                            animateBy="words"
+                            direction="top"
+                        />
                     </motion.div>
+
+
+                    <div id="other-experience-cards" className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
+                        <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="w-full" >
+                            <div className="w-full h-[400px] md:h-[600px]">
+                                <DecayCard width="100%" height="100%" image="/cycling.jpg">
+                                    <div className="px-[10vw] h-full flex flex-col justify-end">
+                                        <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white  drop-shadow-lg">
+                                            Competitive<br />Cycling
+                                        </h2>
+                                        <p className="text-white/90 text-base md:text-lg drop-shadow-md">
+                                            Years of professional racing experience
+                                        </p>
+                                    </div>
+                                </DecayCard>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="w-full flex items-center justify-center"
+                        >
+                            <div className="relative w-full max-w-[500px] h-[450px] sm:h-[500px] md:h-[600px]">
+                                <div className="block lg:hidden w-full h-full">
+                                    <CardSwap
+                                        width="100%"
+                                        height="100%"
+                                        cardDistance={30}
+                                        verticalDistance={40}
+                                        delay={3000}
+                                        pauseOnHover={true}
+                                        skewAmount={4}
+                                    >
+                                        <Card>
+                                            <div className="w-full h-full rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-600/10 border border-yellow-500/30 p-6 sm:p-8 flex flex-col justify-center backdrop-blur-sm">
+                                                <Trophy className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-400 mb-3 sm:mb-4" />
+                                                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 sm:mb-3">Goal-Oriented</h3>
+                                                <p className="text-white/80 text-sm sm:text-base">Strengthened ability to manage long-term objectives and achieve high-performance targets.</p>
+                                            </div>
+                                        </Card>
+                                        <Card>
+                                            <div className="w-full h-full rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-blue-500/30 p-6 sm:p-8 flex flex-col justify-center backdrop-blur-sm">
+                                                <Timer className="w-10 h-10 sm:w-12 sm:h-12 text-blue-400 mb-3 sm:mb-4" />
+                                                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 sm:mb-3">Consistency</h3>
+                                                <p className="text-white/80 text-sm sm:text-base">Developed strong discipline and habits through rigorous training schedules.</p>
+                                            </div>
+                                        </Card>
+                                        <Card>
+                                            <div className="w-full h-full rounded-2xl bg-gradient-to-br from-green-500/20 to-green-600/10 border border-green-500/30 p-6 sm:p-8 flex flex-col justify-center backdrop-blur-sm">
+                                                <Target className="w-10 h-10 sm:w-12 sm:h-12 text-green-400 mb-3 sm:mb-4" />
+                                                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 sm:mb-3">Focus</h3>
+                                                <p className="text-white/80 text-sm sm:text-base">Ability to maintain focus under pressure and stay committed to improvement.</p>
+                                            </div>
+                                        </Card>
+                                        <Card>
+                                            <div className="w-full h-full rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/10 border border-purple-500/30 p-6 sm:p-8 flex flex-col justify-center backdrop-blur-sm">
+                                                <Bike className="w-10 h-10 sm:w-12 sm:h-12 text-purple-400 mb-3 sm:mb-4" />
+                                                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 sm:mb-3">Resilience</h3>
+                                                <p className="text-white/80 text-sm sm:text-base">Built mental toughness to overcome challenges and push through difficult moments.</p>
+                                            </div>
+                                        </Card>
+                                    </CardSwap>
+                                </div>
+
+                                <div id="desktop" className="hidden lg:block w-full h-full">
+                                    <CardSwap
+                                        width={500}
+                                        height={400}
+                                        cardDistance={60}
+                                        verticalDistance={70}
+                                        delay={3000}
+                                        pauseOnHover={true}
+                                        skewAmount={6}
+                                    >
+                                        <Card>
+                                            <div className="w-full h-full rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-600/10 border border-yellow-500/30 p-8 flex flex-col justify-center backdrop-blur-sm">
+                                                <Trophy className="w-12 h-12 text-yellow-400 mb-4" />
+                                                <h3 className="text-3xl font-bold text-white mb-3">Goal-Oriented</h3>
+                                                <p className="text-white/80 text-base">Strengthened ability to manage long-term objectives and achieve high-performance targets through years of competitive racing.</p>
+                                            </div>
+                                        </Card>
+                                        <Card>
+                                            <div className="w-full h-full rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-blue-500/30 p-8 flex flex-col justify-center backdrop-blur-sm">
+                                                <Timer className="w-12 h-12 text-blue-400 mb-4" />
+                                                <h3 className="text-3xl font-bold text-white mb-3">Consistency</h3>
+                                                <p className="text-white/80 text-base">Developed strong discipline and habits through rigorous daily training schedules and commitment to excellence.</p>
+                                            </div>
+                                        </Card>
+                                        <Card>
+                                            <div className="w-full h-full rounded-2xl bg-gradient-to-br from-green-500/20 to-green-600/10 border border-green-500/30 p-8 flex flex-col justify-center backdrop-blur-sm">
+                                                <Target className="w-12 h-12 text-green-400 mb-4" />
+                                                <h3 className="text-3xl font-bold text-white mb-3">Focus</h3>
+                                                <p className="text-white/80 text-base">Ability to maintain focus under pressure and stay committed to continuous improvement in challenging environments.</p>
+                                            </div>
+                                        </Card>
+                                        <Card>
+                                            <div className="w-full h-full rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/10 border border-purple-500/30 p-8 flex flex-col justify-center backdrop-blur-sm">
+                                                <Bike className="w-12 h-12 text-purple-400 mb-4" />
+                                                <h3 className="text-3xl font-bold text-white mb-3">Resilience</h3>
+                                                <p className="text-white/80 text-base">Built mental toughness and the ability to overcome challenges, setbacks, and push through difficult moments.</p>
+                                            </div>
+                                        </Card>
+                                    </CardSwap>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    <motion.div
+                        id="other-experience-quote"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.6 }}
+                        className="max-w-4xl mx-auto text-center"
+                    >
+                        <blockquote className="text-xl md:text-2xl text-muted-foreground leading-relaxed italic">
+                            "This experience directly translates into my work as a software engineer, where discipline, resilience, and the drive to constantly improve are essential for building high-quality systems."
+                        </blockquote>
+                    </motion.div>
+
                 </div>
             </div>
         </Section>
