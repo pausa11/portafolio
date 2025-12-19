@@ -5,6 +5,7 @@ import { useRef } from 'react';
 import { Section } from '@/components/ui/Section';
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Hero() {
     const ref = useRef<HTMLDivElement>(null);
@@ -28,10 +29,31 @@ export function Hero() {
                 style={{ y, opacity }}
                 className="relative z-10 text-center px-4 max-w-4xl mx-auto"
             >
+                {/* Profile Photo */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="mb-8 flex justify-center"
+                >
+                    <div className="relative w-32 h-32 md:w-40 md:h-40">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/50 to-blue-500/50 rounded-full blur-xl animate-pulse" />
+                        <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+                            <Image
+                                src="/profile.jpg"
+                                alt="Daniel Toro Soto"
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+                        </div>
+                    </div>
+                </motion.div>
+
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     className="text-5xl md:text-8xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60"
                 >
                     Daniel Toro Soto
@@ -40,7 +62,7 @@ export function Hero() {
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                     className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance"
                 >
                     Computer and Systems Engineer | Full-Stack Developer
@@ -49,7 +71,7 @@ export function Hero() {
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
                     className="flex gap-4 justify-center"
                 >
                     <Link href="#projects" className="px-6 py-3 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
