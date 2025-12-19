@@ -89,9 +89,9 @@ export function Projects() {
                                     src={project.image}
                                     alt={project.title}
                                     fill
-                                    className="object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-500 group-hover:scale-105 transform transition-transform"
+                                    className="object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500 group-hover:scale-105 transform transition-transform"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-black/60" />
                             </div>
 
                             <div className="relative z-10 p-8 flex flex-col h-full justify-between">
@@ -100,15 +100,15 @@ export function Projects() {
                                         {project.tags.map((tag) => (
                                             <span
                                                 key={tag}
-                                                className="px-3 py-1 bg-background/50 backdrop-blur-sm border border-border/20 rounded-full text-xs font-medium text-foreground/80"
+                                                className="px-3 py-1 bg-white/10 backdrop-blur-md border border-white/30 rounded-full text-xs font-medium text-white shadow-lg"
                                             >
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
-                                    <h3 className="text-2xl font-bold mb-1 group-hover:text-primary transition-colors">{project.title}</h3>
-                                    <p className="text-sm font-medium text-primary/80 mb-3">{project.role}</p>
-                                    <p className="text-muted-foreground leading-relaxed line-clamp-3">{project.description}</p>
+                                    <h3 className="text-2xl font-bold mb-1 text-white group-hover:text-primary transition-colors drop-shadow-lg">{project.title}</h3>
+                                    <p className="text-sm font-medium text-primary mb-3 drop-shadow-md">{project.role}</p>
+                                    <p className="text-white/90 leading-relaxed line-clamp-3 drop-shadow-md">{project.description}</p>
                                 </div>
 
                                 <div className="flex justify-end mt-auto">
