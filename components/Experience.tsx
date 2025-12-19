@@ -2,6 +2,7 @@
 
 import { Section } from '@/components/ui/Section';
 import { motion } from 'framer-motion';
+import RevealText from './react-bits/RevealText';
 
 const experience = [
     {
@@ -22,7 +23,9 @@ export function Experience() {
     return (
         <Section id="experience" className="bg-secondary/30">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center tracking-tight">Experience</h2>
+                <div className="mb-16 flex justify-center">
+                    <RevealText text="Experience" className="text-3xl md:text-5xl font-bold tracking-tight text-center justify-center" delay={0.1} />
+                </div>
                 <div className="max-w-3xl mx-auto space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
                     {experience.map((job, index) => (
                         <motion.div

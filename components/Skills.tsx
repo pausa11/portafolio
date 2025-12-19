@@ -3,6 +3,7 @@
 import { Section } from '@/components/ui/Section';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import RevealText from './react-bits/RevealText';
 
 const skillCategories = [
     {
@@ -50,7 +51,9 @@ export function Skills() {
     return (
         <Section id="skills" className="bg-secondary/20">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center tracking-tight">Technical Skills</h2>
+                <div className="mb-16 flex justify-center">
+                    <RevealText text="Technical Skills" className="text-3xl md:text-5xl font-bold tracking-tight text-center justify-center" delay={0.1} />
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {skillCategories.map((category, index) => (
                         <motion.div

@@ -6,16 +6,20 @@ import { Skills } from "@/components/Skills";
 import { OtherExperience } from "@/components/OtherExperience";
 import { Contact } from "@/components/Contact";
 
+import AnimatedBackground from "@/components/react-bits/AnimatedBackground";
+
 export default function Home() {
   return (
-    <>
-      <Hero />
-      <Experience />
-      <Education />
-      <Projects />
-      <Skills />
-      <OtherExperience />
-      <Contact />
-    </>
+    <AnimatedBackground>
+      <div className="relative z-10">
+        <Hero />
+        <Experience />
+        <Education />
+        <Projects />
+        <Skills />
+        <OtherExperience />
+        <Contact />
+      </div>
+    </AnimatedBackground>
   );
 }

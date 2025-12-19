@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import MagnetButton from './react-bits/MagnetButton';
 
 const projects = [
     {
@@ -56,9 +57,11 @@ export function Projects() {
                             A collection of work defining my experience in full-stack development, AI, and distributed systems.
                         </p>
                     </div>
-                    <a href="https://github.com/pausa11" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium">
-                        View all on GitHub <ArrowRight className="w-4 h-4" />
-                    </a>
+                    <MagnetButton>
+                        <a href="https://github.com/pausa11" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium">
+                            View all on GitHub <ArrowRight className="w-4 h-4" />
+                        </a>
+                    </MagnetButton>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -102,14 +105,16 @@ export function Projects() {
                                 </div>
 
                                 <div className="flex justify-end mt-auto">
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-3 bg-primary text-primary-foreground rounded-full opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-sm hover:bg-primary/90"
-                                    >
-                                        <ExternalLink className="w-5 h-5" />
-                                    </a>
+                                    <MagnetButton>
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-3 bg-primary text-primary-foreground rounded-full opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-sm hover:bg-primary/90 inline-block"
+                                        >
+                                            <ExternalLink className="w-5 h-5" />
+                                        </a>
+                                    </MagnetButton>
                                 </div>
                             </div>
                         </motion.div>

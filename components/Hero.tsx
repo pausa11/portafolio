@@ -6,6 +6,8 @@ import { Section } from '@/components/ui/Section';
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import RevealText from './react-bits/RevealText';
+import MagnetButton from './react-bits/MagnetButton';
 
 export function Hero() {
     const ref = useRef<HTMLDivElement>(null);
@@ -50,23 +52,21 @@ export function Hero() {
                     </div>
                 </motion.div>
 
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                    className="text-5xl md:text-8xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60"
-                >
-                    Daniel Toro Soto
-                </motion.h1>
+                <div className="mb-6 flex justify-center">
+                    <RevealText
+                        text="Daniel Toro Soto"
+                        className="text-5xl md:text-8xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60 justify-center"
+                        delay={0.2}
+                    />
+                </div>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                    className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance"
-                >
-                    Computer and Systems Engineer | Full-Stack Developer
-                </motion.p>
+                <div className="mb-8 flex justify-center">
+                    <RevealText
+                        text="Computer and Systems Engineer | Full-Stack Developer"
+                        className="text-xl md:text-2xl text-muted-foreground text-center text-balance justify-center"
+                        delay={0.4}
+                    />
+                </div>
 
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -74,12 +74,16 @@ export function Hero() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="flex gap-4 justify-center"
                 >
-                    <Link href="#projects" className="px-6 py-3 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
-                        View Projects
-                    </Link>
-                    <Link href="#contact" className="px-6 py-3 bg-secondary text-secondary-foreground rounded-full text-sm font-medium hover:bg-secondary/80 transition-colors">
-                        Contact Me
-                    </Link>
+                    <MagnetButton>
+                        <Link href="#projects" className="inline-block px-6 py-3 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
+                            View Projects
+                        </Link>
+                    </MagnetButton>
+                    <MagnetButton>
+                        <Link href="#contact" className="inline-block px-6 py-3 bg-secondary text-secondary-foreground rounded-full text-sm font-medium hover:bg-secondary/80 transition-colors">
+                            Contact Me
+                        </Link>
+                    </MagnetButton>
                 </motion.div>
             </motion.div>
 
