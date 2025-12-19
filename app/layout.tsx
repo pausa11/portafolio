@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google"; // Keeping Geist as it fit
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { CursorEffect } from "@/components/ui/CursorEffect";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground`}
       >
-        <CursorEffect />
+
         <Header />
         <main className="min-h-screen flex flex-col">
           {children}

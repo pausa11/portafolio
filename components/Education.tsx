@@ -3,6 +3,7 @@
 import { Section } from '@/components/ui/Section';
 import { motion } from 'framer-motion';
 import { GraduationCap, Calendar } from 'lucide-react';
+import BlurText from './BlurText';
 
 export function Education() {
     return (
@@ -13,7 +14,13 @@ export function Education() {
                         <div className="p-3 bg-secondary rounded-full">
                             <GraduationCap className="w-8 h-8 text-primary" />
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Education</h2>
+                        <BlurText
+                            text="Education"
+                            className="text-3xl md:text-5xl font-bold tracking-tight text-white"
+                            delay={150}
+                            animateBy="words"
+                            direction="top"
+                        />
                     </div>
 
                     <motion.div
@@ -26,13 +33,25 @@ export function Education() {
 
                         <div className="relative z-10 flex flex-col md:flex-row justify-between gap-6 md:gap-12">
                             <div className="md:w-1/3">
-                                <h3 className="text-2xl font-bold mb-2">Universidad Tecnológica de Pereira</h3>
+                                <BlurText
+                                    text="Universidad Tecnológica de Pereira"
+                                    delay={150}
+                                    animateBy="words"
+                                    direction="top"
+                                    className="text-2xl font-bold mb-2 text-white"
+                                />
                                 <div className="flex items-center gap-2 text-muted-foreground font-medium mb-4">
                                     <Calendar className="w-4 h-4" />
                                     <span>2021 – 2026</span>
                                 </div>
                                 <div className="inline-block px-3 py-1 bg-secondary rounded-full text-sm font-medium">
-                                    Computer Systems Engineering
+                                    <BlurText
+                                        text="Computer Systems Engineering"
+                                        delay={150}
+                                        animateBy="words"
+                                        direction="top"
+                                        className="text-sm font-medium text-white"
+                                    />
                                 </div>
                             </div>
 

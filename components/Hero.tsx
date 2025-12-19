@@ -2,12 +2,12 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { Section } from '@/components/ui/Section';
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import RevealText from './react-bits/RevealText';
 import MagnetButton from './react-bits/MagnetButton';
+import BlurText from './BlurText';
 
 export function Hero() {
     const ref = useRef<HTMLDivElement>(null);
@@ -21,26 +21,19 @@ export function Hero() {
 
     return (
         <div id="hero" className="relative h-screen w-full flex items-center justify-center overflow-hidden" ref={ref}>
-            {/* Background Elements */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-700" />
-            </div>
 
-            <motion.div
-                style={{ y, opacity }}
-                className="relative z-10 text-center px-4 max-w-4xl mx-auto"
-            >
-                {/* Profile Photo */}
+            <motion.div style={{ y, opacity }} className="relative z-10 text-center px-4 max-w-4xl mx-auto" id='hero-content'>
+
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="mb-8 flex justify-center"
+                    id='profile-photo'
                 >
-                    <div className="relative w-32 h-32 md:w-40 md:h-40">
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/50 to-blue-500/50 rounded-full blur-xl animate-pulse" />
-                        <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+                    <div id='profile-photo-container' className="relative w-32 h-32 md:w-40 md:h-40">
+                        <div id='profile-photo-gradient' className="absolute inset-0 bg-gradient-to-br from-primary/50 to-blue-500/50 rounded-full blur-xl animate-pulse" />
+                        <div id='profile-photo-border' className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
                             <Image
                                 src="/profile.jpg"
                                 alt="Daniel Toro Soto"
@@ -52,23 +45,26 @@ export function Hero() {
                     </div>
                 </motion.div>
 
-                <div className="mb-6 flex justify-center">
-                    <RevealText
-                        text="Daniel Toro Soto"
-                        className="text-5xl md:text-8xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60 justify-center"
-                        delay={0.2}
-                    />
+                <div id='hero-title' className="mb-6 flex justify-center">
+                        <BlurText
+                            text="Daniel Toro Soto"
+                            delay={350}
+                            animateBy="words"
+                            direction="top"
+                            className="text-5xl md:text-8xl font-bold justify-center text-white"
+                        />
                 </div>
 
-                <div className="mb-8 flex justify-center">
-                    <RevealText
+                <div id='hero-subtitle' className="mb-8 flex justify-center">
+                    <BlurText
                         text="Computer and Systems Engineer | Full-Stack Developer"
                         className="text-xl md:text-2xl text-muted-foreground text-center text-balance justify-center"
-                        delay={0.4}
+                        delay={150}
+                        direction="bottom"
                     />
                 </div>
 
-                <motion.div
+                <motion.div id='hero-buttons'
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
@@ -87,7 +83,7 @@ export function Hero() {
                 </motion.div>
             </motion.div>
 
-            <motion.div
+            <motion.div id='hero-scroll-indicator'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 1 }}

@@ -6,6 +6,7 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import MagnetButton from './react-bits/MagnetButton';
+import BlurText from './BlurText';
 
 const projects = [
     {
@@ -52,7 +53,13 @@ export function Projects() {
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
                     <div className="max-w-2xl">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Selected Projects</h2>
+                        <BlurText
+                            text="Selected Projects"
+                            className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-white"
+                            delay={150}
+                            animateBy="words"
+                            direction="top"
+                        />
                         <p className="text-muted-foreground text-lg text-balance">
                             A collection of work defining my experience in full-stack development, AI, and distributed systems.
                         </p>
@@ -84,7 +91,7 @@ export function Projects() {
                                     fill
                                     className="object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-500 group-hover:scale-105 transform transition-transform"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
                             </div>
 
                             <div className="relative z-10 p-8 flex flex-col h-full justify-between">

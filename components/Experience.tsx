@@ -3,6 +3,7 @@
 import { Section } from '@/components/ui/Section';
 import { motion } from 'framer-motion';
 import RevealText from './react-bits/RevealText';
+import BlurText from './BlurText';
 
 const experience = [
     {
@@ -24,7 +25,13 @@ export function Experience() {
         <Section id="experience" className="bg-secondary/30">
             <div className="container mx-auto px-4">
                 <div className="mb-16 flex justify-center">
-                    <RevealText text="Experience" className="text-3xl md:text-5xl font-bold tracking-tight text-center justify-center" delay={0.1} />
+                    <BlurText
+                        text="Experience"
+                        className="text-3xl md:text-5xl font-bold tracking-tight text-center justify-center text-white"
+                        delay={150}
+                        animateBy="words"
+                        direction="top"
+                    />
                 </div>
                 <div className="max-w-3xl mx-auto space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
                     {experience.map((job, index) => (
@@ -42,13 +49,11 @@ export function Experience() {
 
                             <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-card border border-border/50 shadow-sm hover:shadow-md transition-shadow">
                                 <div className="flex flex-col sm:flex-row justify-between mb-2 sm:mb-4">
-                                    <h3 className="font-bold text-lg md:text-xl">{job.company}</h3>
+                                    <BlurText text={job.company} className="font-bold text-lg md:text-xl text-white" delay={150} animateBy="words" direction="top" />
                                     <span className="text-sm text-muted-foreground font-mono bg-secondary px-2 py-1 rounded inline-block w-fit mt-2 sm:mt-0">{job.period}</span>
                                 </div>
-                                <p className="text-primary font-medium mb-2">{job.role}</p>
-                                <p className="text-muted-foreground text-sm leading-relaxed">
-                                    {job.description}
-                                </p>
+                                <BlurText text={job.role} className="text-primary font-medium mb-2 text-white" delay={150} animateBy="words" direction="top" />
+                                <BlurText text={job.description} className="text-muted-foreground text-sm leading-relaxed" delay={50} animateBy="words" direction="top" />
                             </div>
                         </motion.div>
                     ))}

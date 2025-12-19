@@ -3,18 +3,21 @@
 import { Section } from '@/components/ui/Section';
 import { Mail, Github, Linkedin, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import BlurText from './BlurText';
 
 export function Contact() {
     return (
         <Section id="contact" className="py-24 md:py-32">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    className="text-4xl md:text-6xl font-bold mb-8 tracking-tight"
-                >
-                    Ready to work together?
-                </motion.h2>
+                <div className="mb-8 flex justify-center">
+                    <BlurText
+                        text="Ready to work together?"
+                        className="text-4xl md:text-6xl font-bold tracking-tight text-white"
+                        delay={150}
+                        animateBy="words"
+                        direction="top"
+                    />
+                </div>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

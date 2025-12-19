@@ -4,6 +4,7 @@ import { Section } from '@/components/ui/Section';
 import { motion } from 'framer-motion';
 import { Bike, Trophy, Timer } from 'lucide-react';
 import Image from 'next/image';
+import BlurText from './BlurText';
 
 export function OtherExperience() {
     return (
@@ -24,8 +25,20 @@ export function OtherExperience() {
                                 <div className="p-4 bg-primary/5 rounded-full mb-8 inline-block">
                                     <Bike className="w-10 h-10 text-primary" />
                                 </div>
-                                <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Competitive Cycling Experience</h2>
-                                <h3 className="text-xl text-primary font-medium mb-8">Professional Cyclist in Colombia</h3>
+                                <BlurText
+                                    text="Competitive Cycling Experience"
+                                    className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-white"
+                                    delay={150}
+                                    animateBy="words"
+                                    direction="top"
+                                />
+                                <BlurText
+                                    text="Professional Cyclist in Colombia"
+                                    className="text-xl text-primary font-medium mb-8 text-white"
+                                    delay={150}
+                                    animateBy="words"
+                                    direction="top"
+                                />
                             </div>
 
                             {/* Photo and Skills Grid */}

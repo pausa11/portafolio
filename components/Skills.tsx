@@ -3,7 +3,7 @@
 import { Section } from '@/components/ui/Section';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import RevealText from './react-bits/RevealText';
+import BlurText from './BlurText';
 
 const skillCategories = [
     {
@@ -52,7 +52,13 @@ export function Skills() {
         <Section id="skills" className="bg-secondary/20">
             <div className="container mx-auto px-4">
                 <div className="mb-16 flex justify-center">
-                    <RevealText text="Technical Skills" className="text-3xl md:text-5xl font-bold tracking-tight text-center justify-center" delay={0.1} />
+                    <BlurText
+                        text="Technical Skills"
+                        className="text-3xl md:text-5xl font-bold tracking-tight text-center justify-center text-white"
+                        delay={150}
+                        animateBy="words"
+                        direction="top"
+                    />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {skillCategories.map((category, index) => (
@@ -63,7 +69,7 @@ export function Skills() {
                             transition={{ delay: index * 0.1 }}
                             className="bg-card border border-border/50 rounded-2xl p-8 hover:shadow-md transition-shadow"
                         >
-                            <h3 className="text-xl font-bold mb-6 text-primary border-b border-border/50 pb-2">{category.title}</h3>
+                            <h3 className="text-xl font-bold mb-6 text-white border-b border-border/50 pb-2">{category.title}</h3>
                             <div className="grid grid-cols-2 gap-4">
                                 {category.skills.map((skill) => (
                                     <div
