@@ -40,7 +40,7 @@ const projects = [
         description: "NPM library to validate and format Colombian vehicle license plates. A utility tool for developers working with transportation data in Colombia.",
         tags: ["NPM", "Open Source", "TypeScript", "Library"],
         link: "https://www.npmjs.com/package/colombian-plates",
-        image: "/projects/npm-library.png",
+        image: "/projects/npm.png",
         colSpan: "md:col-span-1",
     },
 ];
