@@ -38,7 +38,7 @@ export function Hero() {
                                 src="/profile.jpg"
                                 alt="Daniel Toro Soto"
                                 fill
-                                className="object-cover"
+                                className="object-cover object-[center_80%]"
                                 priority
                             />
                         </div>
@@ -46,13 +46,13 @@ export function Hero() {
                 </motion.div>
 
                 <div id='hero-title' className="mb-6 flex justify-center">
-                        <BlurText
-                            text="Daniel Toro Soto"
-                            delay={350}
-                            animateBy="words"
-                            direction="top"
-                            className="text-5xl md:text-8xl font-bold justify-center text-white"
-                        />
+                    <BlurText
+                        text="Daniel Toro Soto"
+                        delay={350}
+                        animateBy="words"
+                        direction="top"
+                        className="text-5xl md:text-8xl font-bold justify-center text-white"
+                    />
                 </div>
 
                 <div id='hero-subtitle' className="mb-8 flex justify-center">
