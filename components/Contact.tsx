@@ -47,12 +47,12 @@ export function Contact() {
                     </a>
 
                     <div className="flex gap-4">
-                        <a href="https://linkedin.com/in/daniel-toro-soto-869a43282" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary hover:bg-secondary/80 transition-colors">
-                            <Linkedin className="w-6 h-6 text-foreground" />
+                        <a href="https://linkedin.com/in/daniel-toro-soto-869a43282" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-primary hover:bg-primary/90 transition-colors">
+                            <Linkedin className="w-6 h-6 text-primary-foreground" />
                             <span className="sr-only">LinkedIn</span>
                         </a>
-                        <a href="https://github.com/pausa11" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary hover:bg-secondary/80 transition-colors">
-                            <Github className="w-6 h-6 text-foreground" />
+                        <a href="https://github.com/pausa11" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-primary hover:bg-primary/90 transition-colors">
+                            <Github className="w-6 h-6 text-primary-foreground" />
                             <span className="sr-only">GitHub</span>
                         </a>
                     </div>
